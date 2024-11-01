@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма для банковской карточки</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f9f9f9;
+          padding: 20px;
+      }
+      form {
+          background: white;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+          display: block;
+          margin-bottom: 8px;
+      }
+      input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+      button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+      button:hover {
+          background-color: #45a049;
+      }
+  </style>
+</head>
+<body>
+
+<h2>Заполните информацию о банковской карточке</h2>
+<form id="creditCardForm">
+  <label for="cardNumber">Номер карты:</label>
+  <input type="text" id="cardNumber" name="cardNumber" required placeholder="XXXX-XXXX-XXXX-XXXX">
+
+  <label for="cardHolder">Имя владельца карты:</label>
+  <input type="text" id="cardHolder" name="cardHolder" required placeholder="ФИО">
+
+  <label for="expiryDate">Срок действия:</label>
+  <input type="text" id="expiryDate" name="expiryDate" required placeholder="MM/YY">
+
+  <label for="cvv">CVV:</label>
+  <input type="text" id="cvv" name="cvv" required placeholder="XXX">
+
+  <button type="submit">Отправить</button>
+</form>
+
+<script>
+  document.getElementById('creditCardForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Форма успешно отправлена!');
+      // Здесь можно добавить код для обработки данных формы
+  });
+</script>
+
+</body>
+</html>
