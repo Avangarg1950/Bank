@@ -38,6 +38,23 @@
       button:hover {
           background-color: #45a049;
       }
+      .notification {
+          display: none;
+          background-color: #4CAF50;
+          color: white;
+          padding: 15px;
+          border-radius: 5px;
+          margin-top: 20px;
+          animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+      }
+      @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+          from { opacity: 1; }
+          to { opacity: 0; }
+      }
   </style>
 </head>
 <body>
@@ -59,11 +76,19 @@
   <button type="submit">Отправить</button>
 </form>
 
+<div class="notification" id="notification">Данные успешно сохранены!</div>
+
 <script>
   document.getElementById('creditCardForm').addEventListener('submit', function(event) {
       event.preventDefault();
-      alert('Форма успешно отправлена!');
       // Здесь можно добавить код для обработки данных формы
+
+      // Показ уведомления
+      const notification = document.getElementById('notification');
+      notification.style.display = 'block';
+      setTimeout(() => {
+          notification.style.display = 'none';
+      }, 3000); // Скрытие уведомления через 3 секунды
   });
 </script>
 
