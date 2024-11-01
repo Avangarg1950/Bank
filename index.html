@@ -65,13 +65,13 @@
   <input type="text" id="cardNumber" name="cardNumber" required placeholder="XXXX-XXXX-XXXX-XXXX" pattern="\d{4}-\d{4}-\d{4}-\d{4}" title="Формат: XXXX-XXXX-XXXX-XXXX">
 
   <label for="cardHolder">Имя владельца карты:</label>
-  <input type="text" id="cardHolder" name="cardHolder" required placeholder="ФИО">
+  <input type="text" id="cardHolder" name="cardHolder" required placeholder="ФИО" title="Введите имя владельца карты">
 
   <label for="expiryDate">Срок действия:</label>
   <input type="text" id="expiryDate" name="expiryDate" required placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/\d{2}" title="Формат: MM/YY">
 
   <label for="cvv">CVV:</label>
-  <input type="text" id="cvv" name="cvv" required placeholder="XXX" pattern="\d{3}" title="Формат: XXX">
+  <input type="text" id="cvv" name="cvv" required placeholder="XXX" pattern="\d{3}" title="Формат: XXX (три цифры)">
 
   <button type="submit">Отправить</button>
 </form>
@@ -81,6 +81,7 @@
 <script>
   document.getElementById('creditCardForm').addEventListener('submit', function(event) {
       event.preventDefault();
+      
       // Здесь можно добавить код для обработки данных формы
 
       // Показ уведомления
